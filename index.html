@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Layout Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+
+
+      
+      .header {
+        background-color: white;
+        height: 9vh; 
+        width: 100vw; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 45px;
+        font-weight: bold;
+      }
+
+
+      
+      .main {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; 
+        height: 100vh;
+      }
+
+
+      .sideblocks1 > div {
+        background-color:whitesmoke;
+        height: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd;
+        color:black;
+      }
+
+
+      
+      .block2 {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd;
+        font-size: 20px;
+        
+      }
+
+
+      .sideblocks2 > div {
+        background-color: #f9c60c;
+         
+        display: flex;
+        justify-content:center;
+        align-items: left;
+        border: 2px solid #ddd;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="header">Vithaksha</div>
+
+
+    
+    <div class="main">
+      
+      <div class="sideblocks1">
+        <div>
+            <ul>
+            <p><u>SKILLS:</u></p>
+                <li>HTML And CSS</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/vithaksha_?igsh=a3VxMmZ5Ym9xbmN1" target="_blank" rel="noopener noreferrer" >Profile</a>
+            </li>
+            <li>
+              <a href="https://sdmit.in/" target="_blank" rel="noopener noreferrer" >sdmit</a>
+            </li>
+          </ul>
+        </div>
+        <div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/zqvSlNo9baI?si=Sa0WvgZ5_-9aIeU3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+
+
+      
+      <div class="block2"><p style="font-size: 30px; padding:15px 15px;" ><b><ul><li>address: Koppa, Sringeri chickmangaluru</li><li>College: SDM college </li><li>Course: B.Voc.(Software and Application Development,)</li><li> Contact Number:123456789</li><li> Email address: vithaksha@gamil.com</li><li>Father name: Praveen</li> <li>Mother name: Pushpa </li><li>Age:17</li><li>Hobbies:Reading story books,listening music</li></b></p></div>
+
+
+      
+      <div class="sideblocks2">
+        <div><img src="img.jpg"height="100%" width="100%" alt=""></div>
+        <div>
+          
+      
+      </div>
+    </div>
+ </body>
+</html>
