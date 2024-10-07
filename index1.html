@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Methods in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            padding: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Methods in JavaScript</h1>
+
+
+    <!-- Input Form -->
+    <form id="inputForm">
+        <!-- Text Input -->
+        <div class="form-group">
+            <label for="name">Text Input (Name):</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+
+        <!-- Checkbox -->
+        <div class="form-group">
+            <label>Checkbox (Select your interests):</label>
+            <input type="checkbox" id="coding" name="interest" value="Coding">
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="music" name="interest" value="Music">
+            <label for="music">Music</label>
+        </div>
+
+
+        <!-- Radio Buttons -->
+        <div class="form-group">
+            <label>Radio Buttons (Choose your gender):</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+
+        <!-- Dropdown Select -->
+        <div class="form-group">
+            <label for="country">Select your country:</label>
+            <select id="country" name="country">
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="Australia">Australia</option>
+            </select>
+        </div>
+
+
+        <!-- Number Input -->
+        <div class="form-group">
+            <label for="age">Number Input (Age):</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+        </div>
+
+
+        <button type="button" onclick="submitForm()">Submit Form</button>
+    </form>
+
+
+    <hr>
+
+
+    <!-- Other Input Methods -->
+    <div class="form-group">
+        <button onclick="promptInput()">Prompt Input (via dialog)</button>
+        <button onclick="confirmInput()">Confirm Input (via dialog)</button>
+    </div>
+
+
+    <!-- Output Display -->
+    <h2>Form Data Output:</h2>
+    <pre id="formDataOutput"></pre>
+
+
+    <h2>Other Inputs Output:</h2>
+    <pre id="otherDataOutput"></pre>
+
+
+    <script>
+        // Function to handle form submission
+        function submitForm() {
+            // Get text input value
+            const name = document.getElementById("name").value;
+
+
+            // Get selected checkboxes
+            const interests = [];
+            if (document.getElementById("coding").checked) {
+                interests.push(document.getElementById("coding").value);
+            }
+            if (document.getElementById("music").checked) {
+                interests.push(document.getElementById("music").value);
+            }
+
+
+            // Get selected radio button
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+
+
+            // Get selected option from dropdown
+            const country = document.getElementById("country").value;
+
+
+            // Get number input value
+            const age = document.getElementById("age").value;
+
+
+            // Display the collected data
+            const formDataOutput = `Name: ${name}\nInterests: ${interests.join(", ")}\nGender: ${gender}\nCountry: ${country}\nAge: ${age}`;
+            document.getElementById("formDataOutput").textContent = formDataOutput;
+        }
+        // Function to handle prompt input
+        function promptInput() {
+            const userInput = prompt("Please enter a message:");
+            if (userInput !== null) {
+                document.getElementById("otherDataOutput").textContent = `Prompt Input: ${userInput}`;
+            }
+        }
+
+
+        // Function to handle confirm input
+        function confirmInput() {
+            const confirmResult = confirm("Do you like JavaScript?");
+            const message = confirmResult ? "User likes JavaScript!" : "User does not like JavaScript.";
+            document.getElementById("otherDataOutput").textContent = `Confirm Input: ${message}`;
+        }
+    </script>
+</body>
+</html>
